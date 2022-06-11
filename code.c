@@ -252,16 +252,25 @@ void invoice()
 	int j;
 	int o;
 	float gt=0;
+
 	if(ti==0)
 	{
 		printf("There are No Products in your Cart");
 		printf("\n");
 	}
-	printf("\n\n");
-	printf("****************************INVOICE**************************");
-	printf("\n\n");
-	printf("product_number\t| product_name\t| price\t| quantity\t| amount\t|\n");
-	printf("*************************************************************\n");
+
+	FILE *fpntr;
+	fpntr = fopen("C:\\Users\\shrey\\Desktop\\c_project\\invoice.txt", "w");
+	if(fpntr==NULL)
+	{
+		printf("Error in opening file\n");
+	}
+	else{
+	fprintf(fpntr, "\n\n");
+	fprintf(fpntr, "****************************INVOICE**************************");
+	fprintf(fpntr, "\n\n");
+	fprintf(fpntr, "product_number\t| product_name\t| price\t| quantity\t| amount\t|\n");
+	fprintf(fpntr, "*************************************************************\n");
 	for(o=0;o<ti;o++)
 	{
 		cst[o].amount=0;
@@ -270,14 +279,17 @@ void invoice()
 	}
 	for(j=0;j<ti;j++)
 	{
-		printf("%6d\t       |%9s   \t  | %3d\t|%3d\t        |   %3d\n",cst[j].productno,cst[j].productname,cst[j].price,cst[j].quantity,cst[j].amount);
+		fprintf(fpntr, "%6d\t       |%9s   \t  | %3d\t|%3d\t        |   %3d\n",cst[j].productno,cst[j].productname,cst[j].price,cst[j].quantity,cst[j].amount);
 	}
-	printf("\nAmount Payable:%f",gt);
-	printf("\n");
-	printf("Thank you for Shopping");
-	printf("\n");
-	printf("Visit Again");
-	printf("\n");
+	fprintf(fpntr, "\nAmount Payable:%f",gt);
+	fprintf(fpntr, "\n");
+	fprintf(fpntr, "Thank you for Shopping");
+	fprintf(fpntr, "\n");
+	fprintf(fpntr, "Visit Again");
+	fprintf(fpntr, "\n");
+	}
+	fclose(fpntr);
+	printf("Invoice file has been generated!\n");
 }
 void mdelete()
 {
