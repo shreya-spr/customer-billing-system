@@ -260,7 +260,7 @@ void invoice()
 	}
 
 	FILE *fpntr;
-	fpntr = fopen("C:\\Users\\shrey\\Desktop\\c_project\\invoice.txt", "w");
+	fpntr = fopen("invoice.txt", "w");
 	if(fpntr==NULL)
 	{
 		printf("Error in opening file\n");
