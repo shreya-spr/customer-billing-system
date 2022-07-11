@@ -1,6 +1,10 @@
 ## customer-billing-system
  project :smile:  
- <img src="[url](https://cdn.dribbble.com/users/4107928/screenshots/14928630/media/bfa6607a8c7c8089b20e1a36505b6c51.jpg)" width="50%" height="50%">
- - computer console application
- - stores user data
- - uses database file
+ 
+<img width=250 height=206 alt="shopping" src="https://user-images.githubusercontent.com/92443502/178224547-0210df5e-6d3b-4764-a0c6-c0977b236537.jpg">
+
+<br>
+- computer console application<br>  
+- uses databases<br> 
+- user friendly interface  <br>
+- stores and records the user data <br>
